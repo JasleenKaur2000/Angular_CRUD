@@ -1,0 +1,26 @@
+<h1>REGISTER THE USER HERE</h1>
+<form [formGroup]="usersForm" (ngSubmit)="registerUser()">
+  <input type="text" formControlName="name" placeholder="Enter the user name" />
+  <br />
+  <span style="color: red" *ngIf="name && name.invalid && name.touched">
+    Enter a valid user name.
+  </span>
+  <br />
+  <input type="text" formControlName="email" placeholder="Enter the email" />
+  <br />
+  <span style="color: red" *ngIf="email && email.invalid && email.touched">
+    Enter a valid email address.
+  </span>
+  <br />
+  <input
+    type="text"
+    formControlName="mobile"
+    placeholder="Enter the mobile number"
+  />
+  <br />
+  <span style="color: red" *ngIf="mobile && mobile.invalid && mobile.touched">
+    Enter a valid mobile number.
+  </span>
+  <br />
+  <button [disabled]="usersForm.invalid">Upload</button>
+</form>

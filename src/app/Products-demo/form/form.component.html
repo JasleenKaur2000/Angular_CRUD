@@ -1,0 +1,37 @@
+<h1>Register your product here</h1>
+<form formGroup="productForm" (ngSubmit)="registerProduct(productForm.value)">
+  <input
+    type="text"
+    formControlName="product"
+    placeholder="Enter the product name"
+  />
+  <br />
+  <span
+    style="color: red"
+    *ngIf="product && product.invalid && product.touched"
+  >
+    This input is not valid.
+  </span>
+  <br />
+  <input
+    type="text"
+    formControlName="price"
+    placeholder="Enter the product price"
+  />
+  <br />
+  <span style="color: red" *ngIf="price && price.invalid && price.touched">
+    Not a valid price value.
+  </span>
+  <br />
+  <input
+    type="text"
+    formControlName="units"
+    placeholder="Enter the units ordered"
+  />
+  <br />
+  <span style="color: red" *ngIf="price && price.invalid && price.touched">
+    Not valid number of units.
+  </span>
+  <br />
+  <button [disabled]="productForm.invalid">Upload</button>
+</form>
